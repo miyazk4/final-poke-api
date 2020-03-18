@@ -1,0 +1,34 @@
+main {
+  & .bannerContainer {
+    background-color: rgb(47, 47, 47);
+
+    & .banner {
+      padding: 32px;
+      text-align: center;
+      color: #fff;
+      margin: 0 56px;
+      background-color: rgb(37, 50, 50);
+    }
+  }
+
+  & .checkDocsContainer {
+    background-color: #eff1f0;
+
+    & .checkDocs {
+      padding: 20px;
+      margin: 0 56px;
+      background-color: rgb(234, 245, 240);
+      text-align: center;
+
+      & p {
+      }
+
+      & a {
+        display: block;
+        margin-top: 30px;
+        color: #1c88cc;
+        text-decoration: none;
+      }
+    }
+  }
+}
