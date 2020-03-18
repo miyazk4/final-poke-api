@@ -1,0 +1,27 @@
+main {
+  background-color: rgb(249, 249, 249);
+  & .mainContainer {
+    padding: 35px 110px 32px 110px;
+    margin: 0 56px;
+    background-color: #fff;
+
+    & .informationContainer {
+      & .subTitle {
+        margin: 20px 0 7px 0;
+        font-weight: 400;
+        font-size: 20px;
+      }
+
+      & .informationBox {
+        box-shadow: 3px 2px 5px #ccc;
+
+        border: 2px solid #ddd;
+        & .information {
+          padding: 12px;
+          font-size: 15px;
+          background-color: rgb(245, 245, 245);
+        }
+      }
+    }
+  }
+}

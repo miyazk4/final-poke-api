@@ -1,0 +1,59 @@
+header {
+  border: 1px solid red;
+  background-color: rgb(244, 81, 83);
+
+  & .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 56px;
+
+    & .leftSide img {
+      max-width: 115px;
+    }
+
+    & .navigationContainer {
+      & .rightSide .mainNav li {
+        display: inline-block;
+        background-color: rgb(244, 81, 83);
+
+        & a {
+          color: #fff;
+          text-decoration: none;
+          padding: 0 16px;
+          display: block;
+
+          &.activeLink {
+            background-color: rgb(202, 36, 45);
+          }
+
+          &:hover {
+            text-decoration: underline;
+            background-color: rgb(238, 62, 69);
+          }
+        }
+      }
+
+      & .rightSide .mainNav .aboutNavigation {
+        position: relative;
+
+        & .secondaryNav {
+          display: none;
+          position: absolute;
+        }
+
+        &:hover {
+          & .secondaryNav {
+            display: block;
+            background-color: red;
+          }
+
+          & li {
+            display: flex;
+            //white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}
