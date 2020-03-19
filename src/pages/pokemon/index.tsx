@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Pokemon from "./pokemon";
+//import Pagination from "./pokepagination";
 
 export interface PokeData {
   name: string;
@@ -11,6 +12,7 @@ export interface PokeData {
   height: number;
   sprites: {
     front_default: string;
+    back_default?: string;
   };
 }
 
@@ -46,15 +48,16 @@ const PokePage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getPokeData();
+    getPokeData(initialUrl);
   }, []);
 
-  const getPokeData = async () => {
-    let response = await fetch(initialUrl);
+  const getPokeData = async (url: string) => {
+    setLoading(true);
+    let response = await fetch(url);
     const data = await response.json();
     setNextUrl(data.next);
     setPrevUrl(data.previous);
-    setLoading(false);
+
     console.log(data.results);
 
     const pokeRecord: PokeData[] = await Promise.all(
@@ -64,7 +67,11 @@ const PokePage = () => {
     console.log(pokeRecord);
 
     setPokemonData(pokeRecord);
+    setLoading(false);
   };
+
+  const next = () => getPokeData(nextUrl);
+  const prev = () => getPokeData(prevUrl);
 
   return (
     <div>
@@ -77,6 +84,14 @@ const PokePage = () => {
             {pokemonData.map(pokemon => (
               <Pokemon pokemon={pokemon} key={pokemon.name} />
             ))}
+          </div>
+          <div>
+            <button onClick={prev} disabled={!prevUrl}>
+              Previous
+            </button>
+            <button onClick={next} disabled={!nextUrl}>
+              Next
+            </button>
           </div>
         </div>
       )}
