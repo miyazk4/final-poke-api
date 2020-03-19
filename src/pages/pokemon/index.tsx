@@ -27,7 +27,6 @@ interface Abilities {
     url?: string;
   };
 }
-
 // url pq ele há de ter o pokemon.url, tal como tem o pokemon.name
 const GET = (url: string) => fetch(url).then(r => r.json());
 /*
@@ -69,12 +68,18 @@ const PokePage = () => {
 
   return (
     <div>
-      <h1>In the future i'm going to catch them all...</h1>
-      <div className="pokeData">
-        {pokemonData.map(pokemon => (
-          <Pokemon pokemon={pokemon} key={pokemon.name} />
-        ))}
-      </div>
+      {loading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div>
+          <h1>In the future i'm going to catch them all...</h1>
+          <div className="pokeData">
+            {pokemonData.map(pokemon => (
+              <Pokemon pokemon={pokemon} key={pokemon.name} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
