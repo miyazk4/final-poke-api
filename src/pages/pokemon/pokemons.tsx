@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { PokeData } from "./index";
 import typeColors from "./pokemonTypes";
 
-interface PokeProps {
+export interface PokeProps {
   pokemon: PokeData;
 }
 
@@ -37,8 +37,8 @@ const Pokemons = ({ pokemon }: PokeProps) => {
           <p>{ability.ability.name}</p>
         ))}
       </div>
-      <div>
-        <button type="button">
+      <div className="btnContainer">
+        <button type="button" className="pokeBtn">
           <Link to={{ pathname: `pokemon/${pokemon.name}` }}>Detail</Link>
         </button>
       </div>
