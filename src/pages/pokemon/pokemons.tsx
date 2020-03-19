@@ -1,11 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { PokeData } from "./index";
+import typeColors from "./pokemonTypes";
 
 interface PokeProps {
   pokemon: PokeData;
 }
 
-const Pokemon = ({ pokemon }: PokeProps) => {
+// <li style={{backgroundColor: }}></li>
+
+const Pokemons = ({ pokemon }: PokeProps) => {
   return (
     <div className="pokeContainer">
       <div className="pokeImage">
@@ -15,7 +19,9 @@ const Pokemon = ({ pokemon }: PokeProps) => {
       <div className="pokeType">
         <ul>
           {pokemon.types.map((type: any) => (
-            <li>{type.type.name}</li>
+            <li style={{ backgroundColor: typeColors[type.type.name] }}>
+              {type.type.name}
+            </li>
           ))}
         </ul>
       </div>
@@ -31,8 +37,13 @@ const Pokemon = ({ pokemon }: PokeProps) => {
           <p>{ability.ability.name}</p>
         ))}
       </div>
+      <div>
+        <button type="button">
+          <Link to={{ pathname: `pokemon/${pokemon.name}` }}>Detail</Link>
+        </button>
+      </div>
     </div>
   );
 };
 
-export default Pokemon;
+export default Pokemons;

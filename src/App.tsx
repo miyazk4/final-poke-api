@@ -2,7 +2,13 @@ import React from "react";
 import Header from "./components/header";
 import Home from "./pages/home";
 import About from "./pages/about";
-import Pokemon from "./pages/pokemon";
+import Pokemons from "./pages/pokemon";
+//import Pokemon from "./pages/pokemon/singlepokemon";
+/* 
+<Route path="/pokemon/:id">
+          <Pokemon />
+        </Route>
+*/
 
 import { Switch, Route } from "react-router-dom";
 import "./App.scss";
@@ -14,7 +20,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route path="/pokemon">
-          <Pokemon />
+          <Pokemons />
         </Route>
         <Route path="/about">
           <About />

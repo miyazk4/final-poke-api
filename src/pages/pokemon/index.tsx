@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Pokemon from "./pokemon";
+import Pokemons from "./pokemons";
 import "./pokemon.scss";
 //import Pagination from "./pokepagination";
 
@@ -91,7 +91,7 @@ const PokePage = () => {
           </div>
           <div className="pokeData">
             {pokemonData.map(pokemon => (
-              <Pokemon pokemon={pokemon} key={pokemon.name} />
+              <Pokemons pokemon={pokemon} key={pokemon.name} />
             ))}
           </div>
           <div className="btnContainer">
