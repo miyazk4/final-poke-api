@@ -8,18 +8,25 @@ interface PokeProps {
 const Pokemon = ({ pokemon }: PokeProps) => {
   return (
     <div className="pokeContainer">
-      <div>
+      <div className="pokeImage">
         <img src={pokemon.sprites.front_default} alt={pokemon.name} />
       </div>
-      <h1>{pokemon.name}</h1>
-      <div>
-        {pokemon.types.map((type: any) => (
-          <li>{type.type.name}</li>
-        ))}
+      <h1 className="pokeName">{pokemon.name}</h1>
+      <div className="pokeType">
+        <ul>
+          {pokemon.types.map((type: any) => (
+            <li>{type.type.name}</li>
+          ))}
+        </ul>
       </div>
-      <div>{pokemon.weight}</div>
-      <div>{pokemon.height}</div>
-      <div>
+      <div className="pokeDetailContainer">
+        <span className="pokeDetail">Weight</span>:<span>{pokemon.weight}</span>
+      </div>
+      <div className="pokeDetailContainer">
+        <span className="pokeDetail">Height</span>:<span>{pokemon.height}</span>
+      </div>
+      <div className="pokeDetailContainer">
+        <span className="pokeDetail">Abilities</span>:
         {pokemon.abilities.map((ability: any) => (
           <p>{ability.ability.name}</p>
         ))}

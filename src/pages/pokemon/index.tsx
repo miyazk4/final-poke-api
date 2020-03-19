@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Pokemon from "./pokemon";
+import "./pokemon.scss";
 //import Pagination from "./pokepagination";
 
 export interface PokeData {
@@ -74,22 +75,30 @@ const PokePage = () => {
   const prev = () => getPokeData(prevUrl);
 
   return (
-    <div>
+    <div className="pageContainer">
       {loading ? (
-        <h1>Loading...</h1>
+        <h1 className="title">Waiting to load them all...</h1>
       ) : (
         <div>
-          <h1>In the future i'm going to catch them all...</h1>
+          <h1 className="title">Gotta catch them all!</h1>
+          <div className="btnContainer">
+            <button className="pokeBtn" onClick={prev} disabled={!prevUrl}>
+              Previous
+            </button>
+            <button className="pokeBtn" onClick={next} disabled={!nextUrl}>
+              Next
+            </button>
+          </div>
           <div className="pokeData">
             {pokemonData.map(pokemon => (
               <Pokemon pokemon={pokemon} key={pokemon.name} />
             ))}
           </div>
-          <div>
-            <button onClick={prev} disabled={!prevUrl}>
+          <div className="btnContainer">
+            <button className="pokeBtn" onClick={prev} disabled={!prevUrl}>
               Previous
             </button>
-            <button onClick={next} disabled={!nextUrl}>
+            <button className="pokeBtn" onClick={next} disabled={!nextUrl}>
               Next
             </button>
           </div>
