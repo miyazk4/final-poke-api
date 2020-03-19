@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Pokemons from "./pokemons";
 import "./pokemon.scss";
+import { GET } from "../../utils/http";
 //import Pagination from "./pokepagination";
 
 export interface PokeData {
@@ -8,7 +9,7 @@ export interface PokeData {
   url?: string;
   base_experience?: number;
   types: Types[];
-  abilities: Abilities[];
+  abilities: { ability: Result }[];
   weight: number;
   height: number;
   sprites: {
@@ -24,14 +25,12 @@ interface Types {
   };
 }
 
-interface Abilities {
-  ability: {
-    name: string;
-    url?: string;
-  };
+interface Result {
+  name: string;
+  url: string;
 }
 // url pq ele há de ter o pokemon.url, tal como tem o pokemon.name
-const GET = (url: string) => fetch(url).then(r => r.json());
+
 /*
 async function fetchAllPokemons(url: string): Promise<PokeResult[]> {
     const list = await GET(url);
@@ -41,21 +40,20 @@ fetchAllPokemons('https://pokeurl ')
 
 */
 
+const pokemonUrl = "https://pokeapi.co/api/v2/pokemon";
 const PokePage = () => {
-  const initialUrl = "https://pokeapi.co/api/v2/pokemon";
   const [pokemonData, setPokemonData] = useState<PokeData[]>([]);
   const [nextUrl, setNextUrl] = useState("");
   const [prevUrl, setPrevUrl] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getPokeData(initialUrl);
+    getPokeData(pokemonUrl);
   }, []);
 
   const getPokeData = async (url: string) => {
     setLoading(true);
-    let response = await fetch(url);
-    const data = await response.json();
+    const data = await GET(url);
     setNextUrl(data.next);
     setPrevUrl(data.previous);
 

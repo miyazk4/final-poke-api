@@ -3,7 +3,7 @@ import Header from "./components/header";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Pokemons from "./pages/pokemon";
-//import Pokemon from "./pages/pokemon/singlepokemon";
+import Pokemon from "./pages/pokemon/singlepokemon";
 /* 
 <Route path="/pokemon/:id">
           <Pokemon />
@@ -19,6 +19,9 @@ const App = () => {
     <div>
       <Header />
       <Switch>
+        <Route path="/pokemon/:id">
+          <Pokemon />
+        </Route>
         <Route path="/pokemon">
           <Pokemons />
         </Route>

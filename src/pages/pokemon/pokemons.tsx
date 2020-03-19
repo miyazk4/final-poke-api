@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { PokeData } from "./index";
 import typeColors from "./pokemonTypes";
 
-interface PokeProps {
+export interface PokeProps {
   pokemon: PokeData;
 }
 
