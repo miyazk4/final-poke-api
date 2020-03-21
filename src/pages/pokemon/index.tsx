@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Pokemons from "./pokemons";
-import "./pokemon.scss";
+import "./pokemons.scss";
 import { GET } from "../../utils/http";
 //import Pagination from "./pokepagination";
 
@@ -16,6 +16,19 @@ export interface PokeData {
     front_default: string;
     back_default?: string;
   };
+  id: number;
+  forms: Forms[];
+  species: Species;
+}
+
+interface Forms {
+  name: string;
+  url: string;
+}
+
+interface Species {
+  name: string;
+  url: string;
 }
 
 interface Types {
