@@ -85,19 +85,14 @@
   & .btnContainer {
     & .pokeBtn {
       cursor: pointer;
-      font-size: 20px;
-      font-weight: 400;
+      color: rgb(33, 105, 75);
+      font-weight: bold;
       width: 150px;
       border: 0;
       margin: 7px;
-      padding: 15px;
+      padding: 10px;
       border-radius: 7px;
-      background-color: #44a5d1;
-
-      & a {
-        text-decoration: none;
-        color: #000;
-      }
+      background-color: #64b2d6;
     }
   }
 
