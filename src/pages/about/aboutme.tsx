@@ -28,8 +28,9 @@ const AboutMe = () => {
             <h1>About Me</h1>
             <p>
               Coming off as an oportunity in the summer of 2016, I was
-              introduced to my first Web Developer Course by <a href="">FLAG</a>{" "}
-              and developed a bigger taste in this area.
+              introduced to my first Web Developer Course by{" "}
+              <a href="https://www.flag.pt/">FLAG</a> and developed a bigger
+              taste in this area.
             </p>
             <p>
               Near the end of 2018 throughout most of 2019, once again, I had an
@@ -38,7 +39,8 @@ const AboutMe = () => {
               life, despite the difficulties faced sometimes.
             </p>
             <p>
-              As of March 2020, I was accepted by <a href="">Agroop</a> to join
+              As of March 2020, I was accepted by{" "}
+              <a href="https://www.agroop.net/en/whatwedo">Agroop</a> to join
               their internship program where I use tools I had little or no
               contact at all, such as React, Sass and Typescript.
             </p>
