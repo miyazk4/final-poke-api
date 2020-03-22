@@ -3,12 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #bebebe;
+  background-color: rgb(249, 249, 249);
+
   & .pokeContainer {
     margin-top: 50px;
-    background-color: #e8e8e8;
-    border: 4px solid #ddd;
-    box-shadow: -10px -10px 10px #989898;
+    background-color: rgb(245, 245, 245);
+    border: 2px solid rgb(150, 130, 130);
+    box-shadow: 3px 2px 5px #ccc;
     width: 35%;
     border-radius: 15px;
     text-align: center;
@@ -28,13 +29,13 @@
     & .pokeNumber {
       font-weight: 400;
       color: #000;
-      background-color: #587878;
+      background-color: rgba(150, 150, 220, 0.2);
       border-radius: 15px 15px 0 0;
     }
 
     & .pokeImageContainer {
-      border-bottom: 10px solid #bbb;
-      background-color: #587878;
+      border-bottom: 7px solid rgb(150, 130, 130);
+      background-color: rgba(150, 150, 220, 0.2);
       & .pokeImage {
         max-width: 100%;
         margin: 0 auto;
@@ -61,7 +62,7 @@
     & .pokeDetailContainer {
       padding: 7px;
       width: 70%;
-      background-color: rgba(20, 20, 20, 0.1);
+      background-color: rgba(150, 150, 220, 0.2);
       margin: 9px auto;
       border-radius: 5px;
       & .pokeDetail {
