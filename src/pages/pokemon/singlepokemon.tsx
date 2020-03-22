@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { PokeData } from "./";
+import { PokeData } from "../../interfaces";
 import { useParams } from "react-router-dom";
 import { GET } from "../../utils/http";
 //import Pokemons from "./pokemons";
@@ -7,9 +7,6 @@ import styles from "./pokemon.module.scss";
 import typeColors from "./pokemonTypes";
 
 const pokemonUrl = "https://pokeapi.co/api/v2/pokemon";
-/*interface Ability {
-  name: string;
-} */
 
 const Pokemon = () => {
   let { id } = useParams<{ id: string }>();

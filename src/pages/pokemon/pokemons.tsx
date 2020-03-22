@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { PokeData } from "./index";
+import { PokeData } from "../../interfaces";
 import typeColors from "./pokemonTypes";
 import styles from "./pokemons.module.scss";
 
