@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Pokemons from "./pokemons";
-import "./pokemons.scss";
 import { GET } from "../../utils/http";
 //import Pagination from "./pokepagination";
+import styles from "./pokemons.module.scss";
 
 export interface PokeData {
   name: string;
@@ -86,30 +86,46 @@ const PokePage = () => {
   const prev = () => getPokeData(prevUrl);
 
   return (
-    <div className="pageContainer">
+    <div className={styles.pageContainer}>
       {loading ? (
-        <h1 className="title">Waiting to load them all...</h1>
+        <h1 className={styles.title}>Waiting to load them all...</h1>
       ) : (
         <div>
-          <h1 className="title">Gotta catch them all!</h1>
-          <div className="btnContainer">
-            <button className="pokeBtn" onClick={prev} disabled={!prevUrl}>
+          <h1 className={styles.title}>Gotta catch them all!</h1>
+          <div className={styles.btnContainer}>
+            <button
+              className={styles.pokeBtn}
+              onClick={prev}
+              disabled={!prevUrl}
+            >
               Previous
             </button>
-            <button className="pokeBtn" onClick={next} disabled={!nextUrl}>
+            <button
+              className={styles.pokeBtn}
+              onClick={next}
+              disabled={!nextUrl}
+            >
               Next
             </button>
           </div>
-          <div className="pokeData">
+          <div className={styles.pokeData}>
             {pokemonData.map(pokemon => (
               <Pokemons pokemon={pokemon} key={pokemon.name} />
             ))}
           </div>
-          <div className="btnContainer">
-            <button className="pokeBtn" onClick={prev} disabled={!prevUrl}>
+          <div className={styles.btnContainer}>
+            <button
+              className={styles.pokeBtn}
+              onClick={prev}
+              disabled={!prevUrl}
+            >
               Previous
             </button>
-            <button className="pokeBtn" onClick={next} disabled={!nextUrl}>
+            <button
+              className={styles.pokeBtn}
+              onClick={next}
+              disabled={!nextUrl}
+            >
               Next
             </button>
           </div>
