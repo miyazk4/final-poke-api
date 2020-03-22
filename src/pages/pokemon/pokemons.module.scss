@@ -1,0 +1,120 @@
+.pageContainer {
+  text-align: center;
+  background-color: #5f021f;
+
+  & .title {
+    padding: 15px;
+    color: #ddd;
+    font-size: 50px;
+    font-weight: 400;
+  }
+
+  & .pokeData {
+    background-color: #bebebe;
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-content: center;
+
+    & .pokeContainer {
+      background-color: #e8e8e8;
+      border: 4px solid #ddd;
+      box-shadow: -10px -10px 10px #989898;
+      margin: 50px;
+      border-radius: 15px;
+      width: 320px;
+
+      & .pokeNumber {
+        padding-top: 15px;
+        font-weight: 400;
+        color: #000;
+        background-color: #587878;
+        border-radius: 15px 15px 0 0;
+        font-size: 25px;
+      }
+
+      & .pokeImageContainer {
+        border-bottom: 10px solid #bbb;
+        background-color: #587878;
+
+        & .pokeImage {
+          max-width: 100%;
+          margin: 0 auto;
+          text-align: center;
+        }
+      }
+
+      & .pokeName {
+        font-weight: 400;
+        color: #595959;
+        text-transform: capitalize;
+      }
+
+      & ul {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        text-align: center;
+        list-style-type: none;
+
+        & li {
+          font-size: 20px;
+          color: #000;
+          border-radius: 3px;
+          padding: 5px;
+          min-width: 50px;
+          margin: 5px;
+        }
+      }
+
+      & .pokeDetailContainer {
+        padding: 7px;
+        width: 70%;
+        background-color: rgba(20, 20, 20, 0.1);
+        margin: 9px auto;
+        border-radius: 5px;
+
+        & .pokeDetail {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  & .btnContainer {
+    & .pokeBtn {
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 400;
+      width: 150px;
+      border: 0;
+      margin: 7px;
+      padding: 15px;
+      border-radius: 7px;
+      background-color: #44a5d1;
+
+      & a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+
+  & .pokeDetailBtnContainer {
+    & .pokeDetailBtn {
+      border: 0;
+      border-radius: 5px;
+      background-color: rgba(20, 20, 20, 0.3);
+      cursor: pointer;
+
+      & a {
+        width: 125px;
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+}
