@@ -1,5 +1,5 @@
 .pokeWrapper {
-  width: 100%;
+  max-width: 1245px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,18 +13,6 @@
     width: 35%;
     border-radius: 15px;
     text-align: center;
-
-    /*@keyframes rotate {
-      from {
-        transform: rotate(-20deg);
-      }
-      to {
-        transform: rotate(0);
-      }
-    }
-    &:hover {
-      animation: rotate 3s;
-    } */
 
     & .pokeNumber {
       font-weight: 400;
@@ -83,6 +71,22 @@
       .pokeDetailSpecie {
         text-transform: capitalize;
       }
+    }
+  }
+}
+
+@media (min-width: 0) and (max-width: 600px) {
+  .pokeWrapper {
+    & .pokeContainer {
+      width: calc(80%);
+    }
+  }
+}
+
+@media (min-width: 601px) and (max-width: 998px) {
+  .pokeWrapper {
+    & .pokeContainer {
+      min-width: 550px;
     }
   }
 }

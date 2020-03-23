@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import cn from "classnames";
 import pokeLogo from "../images/pokeapi_256.png";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./header.module.scss";
+import Navigation from "./navigation";
 
 const Header = () => {
-  const hamburger = document.querySelector(".hamburgerMenu");
-  console.log(hamburger);
+  const [open, setOpen] = useState(false);
 
-  const toggle = (x: any) => {
-    x.classList.toggle("change");
+  const toggle = () => {
+    setOpen(!open);
   };
+
+  /*const toggle = (x: any) => {
+    x.classList.toggle("change");
+  }; */
 
   return (
     <header>
@@ -21,58 +26,17 @@ const Header = () => {
             </Link>
           </h1>
         </div>
-        <nav className={styles.navigationContainer}>
-          <div className={styles.rightSide}>
-            <ul className={styles.mainNav}>
-              <li>
-                <NavLink
-                  to="/"
-                  activeClassName={styles.activeLink}
-                  exact={true}
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li className={styles.aboutNavigation}>
-                <NavLink
-                  to="/about"
-                  activeClassName={styles.activeLink}
-                  onClick={e => e.preventDefault()}
-                >
-                  About
-                </NavLink>
-                <ul className={styles.secondaryNav}>
-                  <li>
-                    <NavLink
-                      to={`/about/pokeapi`}
-                      activeClassName={styles.activeLink}
-                    >
-                      Poke Api
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      to={`/about/aboutme`}
-                      activeClassName={styles.activeLink}
-                    >
-                      About Me
-                    </NavLink>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <NavLink to="/pokemon" activeClassName={styles.activeLink}>
-                  Pokemon
-                </NavLink>
-              </li>
-            </ul>
-            <div className={styles.hamburgerMenu} onClick={toggle}>
-              <div className={styles.bar1}></div>
-              <div className={styles.bar2}></div>
-              <div className={styles.bar3}></div>
-            </div>
+        <div>
+          <div
+            className={cn(styles.hamburgerMenu, { [styles.change]: open })}
+            onClick={toggle}
+          >
+            <div className={styles.bar1}></div>
+            <div className={styles.bar2}></div>
+            <div className={styles.bar3}></div>
           </div>
-        </nav>
+          <Navigation open={open} />
+        </div>
       </div>
     </header>
   );

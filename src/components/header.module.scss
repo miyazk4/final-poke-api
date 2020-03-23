@@ -3,38 +3,45 @@ header {
   background-color: rgb(244, 81, 83);
   max-width: 1245px;
 
-  @media (min-width: 0) and (max-width: 600px) {
-    & .container {
-      & .navigationContainer {
-        & .rightSide {
-          & .mainNav {
-            display: none;
-          }
-          & .hamburgerMenu {
-            cursor: pointer;
-            display: inline-block;
+  @media (max-width: 600px) {
+    .hamburgerMenu {
+      cursor: pointer;
+      display: inline-block;
 
-            & .bar1,
-            .bar2,
-            .bar3 {
-              background-color: #ddd;
-              width: 35px;
-              height: 5px;
-              margin: 6px 0;
-              border-radius: 5px;
-            }
-            & .change .bar1 {
-              transform: rotate(-45deg) translate(-9px, 6px);
-            }
+      & .bar1,
+      .bar2,
+      .bar3 {
+        background-color: #ddd;
+        width: 35px;
+        height: 5px;
+        margin: 6px 0;
+        border-radius: 5px;
+      }
+      &.change .bar1 {
+        transform: rotate(-45deg) translate(-9px, 6px);
+      }
 
-            & .change .bar2 {
-              opacity: 0;
-            }
+      &.change .bar2 {
+        opacity: 0;
+      }
 
-            & .change .bar3 {
-              transform: rotate(45deg) translate(-8px, -8px);
-            }
-          }
+      &.change .bar3 {
+        transform: rotate(45deg) translate(-8px, -8px);
+      }
+    }
+    .navigationContainer:not(.navigationModalOpen) {
+      display: none;
+    }
+    .navigationContainer.navigationModalOpen {
+      position: fixed;
+      left: 0;
+      top: 48px;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.5);
+      .mainNav {
+        li {
+          display: block;
         }
       }
     }
@@ -51,7 +58,7 @@ header {
     }
 
     & .navigationContainer {
-      & .rightSide .mainNav li {
+      .mainNav li {
         display: inline-block;
         background-color: rgb(244, 81, 83);
 
@@ -81,12 +88,12 @@ header {
         }
 
         &:hover {
-          & .secondaryNav {
+          .secondaryNav {
             display: block;
             background-color: red;
           }
 
-          & li {
+          li {
             display: flex;
             //white-space: nowrap;
           }
