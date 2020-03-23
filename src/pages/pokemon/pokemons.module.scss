@@ -1,6 +1,8 @@
+$center: center;
+$insideCardInfoBck: rgba(150, 150, 220, 0.2);
 .pageContainer {
   margin-top: 15px;
-  text-align: center;
+  text-align: $center;
   background-color: #8f2d4c;
 
   & .title {
@@ -14,8 +16,8 @@
     background-color: rgb(249, 249, 249);
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
+    justify-content: $center;
+    align-content: $center;
 
     & .pokeContainer {
       background-color: rgb(245, 245, 245);
@@ -29,19 +31,19 @@
         padding-top: 15px;
         font-weight: 400;
         color: #000;
-        background-color: rgba(150, 150, 220, 0.2);
+        background-color: $insideCardInfoBck;
         border-radius: 15px 15px 0 0;
         font-size: 25px;
       }
 
       & .pokeImageContainer {
         border-bottom: 7px solid rgb(150, 130, 130);
-        background-color: rgba(150, 150, 220, 0.2);
+        background-color: $insideCardInfoBck;
 
         & .pokeImage {
           max-width: 100%;
           margin: 0 auto;
-          text-align: center;
+          text-align: $center;
         }
       }
 
@@ -53,9 +55,9 @@
 
       & ul {
         display: flex;
-        justify-content: center;
+        justify-content: $center;
         padding: 0;
-        text-align: center;
+        text-align: $center;
         list-style-type: none;
 
         & li {
@@ -71,7 +73,7 @@
       & .pokeDetailContainer {
         padding: 7px;
         width: 70%;
-        background-color: rgba(150, 150, 220, 0.2);
+        background-color: $insideCardInfoBck;
         margin: 9px auto;
         border-radius: 5px;
 
