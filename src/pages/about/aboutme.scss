@@ -4,6 +4,7 @@ $boxShadow: 3px 2px 5px #ccc;
 $border: 3px solid #ddd;
 
 main {
+  max-width: 1245px;
   background-color: rgb(249, 249, 249);
 
   & .aboutMeWrapper {
@@ -12,7 +13,6 @@ main {
     background-color: #fff;
 
     & .aboutMeFlex {
-      margin-top: 45px;
       display: flex;
 
       & .leftColumn {
@@ -21,7 +21,6 @@ main {
         border: $border;
         border-radius: $borderRadius;
         padding: 15px;
-        flex: 0 0 33%;
         margin-right: 20px;
 
         & .aboutMeImgContainer {
@@ -66,6 +65,67 @@ main {
           background-color: $contBackground;
           border-radius: $borderRadius;
           margin: 10px 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 0) and (max-width: 600px) {
+  main {
+    & .aboutMeWrapper {
+      padding: 10px 15px;
+      margin: 10px auto 0 auto;
+
+      & .aboutMeFlex {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & .leftColumn {
+          max-width: 350px;
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 601px) and (max-width: 998px) {
+  main {
+    & .aboutMeWrapper {
+      margin: 25px auto 0 auto;
+      & .aboutMeFlex {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & .leftColumn {
+          max-width: 450px;
+          margin-bottom: 40px;
+        }
+
+        & .rightColumn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 999px) {
+  main {
+    max-width: 100%;
+
+    & .aboutMeWrapper {
+      & .aboutMeFlex {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 45px;
+
+        & .leftColumn {
+          flex: 0 0 33%;
         }
       }
     }

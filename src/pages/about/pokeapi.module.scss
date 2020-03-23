@@ -1,4 +1,6 @@
 main {
+  max-width: 1245px;
+  background-color: rgb(249, 249, 249);
   a {
     text-decoration: none;
     color: #1c88cc;
@@ -12,10 +14,7 @@ main {
     font-weight: bold;
   }
 
-  background-color: rgb(249, 249, 249);
   & .mainContainer {
-    padding: 35px 110px 32px 110px;
-    margin: 0 56px;
     background-color: #fff;
 
     & .informationContainer {
@@ -40,6 +39,31 @@ main {
           padding-left: 40px;
         }
       }
+    }
+  }
+}
+
+@media (min-width: 0) and (max-width: 600px) {
+  & .mainContainer {
+    padding: 15px !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 999px) {
+  & .mainContainer {
+    padding: 35px !important;
+    margin: 0 auto !important;
+  }
+}
+
+@media (min-width: 1000px) {
+  main {
+    max-width: 100%;
+
+    & .mainContainer {
+      margin: 0 4%;
+      padding: 0 35px;
     }
   }
 }

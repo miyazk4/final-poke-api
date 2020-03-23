@@ -1,6 +1,44 @@
 header {
   border: 1px solid red;
   background-color: rgb(244, 81, 83);
+  max-width: 1245px;
+
+  @media (min-width: 0) and (max-width: 600px) {
+    & .container {
+      & .navigationContainer {
+        & .rightSide {
+          & .mainNav {
+            display: none;
+          }
+          & .hamburgerMenu {
+            cursor: pointer;
+            display: inline-block;
+
+            & .bar1,
+            .bar2,
+            .bar3 {
+              background-color: #ddd;
+              width: 35px;
+              height: 5px;
+              margin: 6px 0;
+              border-radius: 5px;
+            }
+            & .change .bar1 {
+              transform: rotate(-45deg) translate(-9px, 6px);
+            }
+
+            & .change .bar2 {
+              opacity: 0;
+            }
+
+            & .change .bar3 {
+              transform: rotate(45deg) translate(-8px, -8px);
+            }
+          }
+        }
+      }
+    }
+  }
 
   & .container {
     display: flex;
@@ -55,5 +93,11 @@ header {
         }
       }
     }
+  }
+}
+
+@media (min-width: 999px) {
+  header {
+    max-width: 100%;
   }
 }
