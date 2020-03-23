@@ -4,6 +4,7 @@ import pokeLogo from "../images/pokeapi_256.png";
 import { Link } from "react-router-dom";
 import styles from "./header.module.scss";
 import Navigation from "./navigation";
+import Hamburger from "./hamburgerMenu";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -27,15 +28,7 @@ const Header = () => {
           </h1>
         </div>
         <div>
-          <div
-            className={cn(styles.hamburgerMenu, { [styles.change]: open })}
-            onClick={toggle}
-          >
-            <div className={styles.bar1}></div>
-            <div className={styles.bar2}></div>
-            <div className={styles.bar3}></div>
-          </div>
-          <Navigation open={open} />
+          <Hamburger />
         </div>
       </div>
     </header>
