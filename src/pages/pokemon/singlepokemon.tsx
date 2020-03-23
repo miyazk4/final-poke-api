@@ -5,18 +5,24 @@ import { GET } from "../../utils/http";
 //import Pokemons from "./pokemons";
 import styles from "./pokemon.module.scss";
 import typeColors from "./pokemonTypes";
+import E404 from "../e404";
 
 const pokemonUrl = "https://pokeapi.co/api/v2/pokemon";
 
 const Pokemon = () => {
   let { id } = useParams<{ id: string }>();
   const [pokemon, setPokemon] = useState<PokeData>();
+  const [error, setError] = useState(false);
   // const [abilities, setAbilities] = useState<Ability[]>();
 
   const fetchPokemon = async (_: string) => {
-    const pok = await GET<PokeData>(pokemonUrl + "/" + id);
-    setPokemon(pok);
-    console.log(pok);
+    try {
+      const pok = await GET<PokeData>(pokemonUrl + "/" + id);
+      setPokemon(pok);
+      console.log(pok);
+    } catch (e) {
+      setError(true);
+    }
 
     /*const abi = await Promise.all(
       pok.abilities.map(ab => GET<Ability>(ab.ability.url))
@@ -33,7 +39,9 @@ const Pokemon = () => {
   return (
     <div>
       <div className={styles.pokeWrapper}>
-        {pokemon ? (
+        {error ? (
+          <E404 />
+        ) : pokemon ? (
           <div className={styles.pokeContainer}>
             <h1 className={styles.pokeNumber}>Pokemon No.{pokemon?.id}</h1>
             <div className={styles.pokeImageContainer}>

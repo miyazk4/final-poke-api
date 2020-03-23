@@ -7,9 +7,6 @@ import styles from "./pokemons.module.scss";
 export interface PokeProps {
   pokemon: PokeData;
 }
-
-// <li style={{backgroundColor: }}></li>
-
 const Pokemons = ({ pokemon }: PokeProps) => {
   return (
     <div className={styles.pokeWrapper}>
@@ -26,7 +23,10 @@ const Pokemons = ({ pokemon }: PokeProps) => {
         <div className={styles.pokeType}>
           <ul>
             {pokemon.types.map((type: any) => (
-              <li style={{ backgroundColor: typeColors[type.type.name] }}>
+              <li
+                key={type.type.name}
+                style={{ backgroundColor: typeColors[type.type.name] }}
+              >
                 {type.type.name}
               </li>
             ))}
@@ -43,7 +43,7 @@ const Pokemons = ({ pokemon }: PokeProps) => {
         <div className={styles.pokeDetailContainer}>
           <span className={styles.pokeDetail}>Abilities</span>:
           {pokemon.abilities.map((ability: any) => (
-            <p>{ability.ability.name}</p>
+            <p key={ability.ability.name}>{ability.ability.name}</p>
           ))}
         </div>
         <div className={styles.pokeDetailBtnContainer}>
