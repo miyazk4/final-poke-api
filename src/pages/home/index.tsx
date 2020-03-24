@@ -20,7 +20,7 @@ const Home = () => {
               accessible through a modern RESTful API.
             </p>
             <p>
-              <Link to="/">Check out the docs!</Link>
+              <a href="https://pokeapi.co/docs/v2.html">Check out the docs!></a>
             </p>
           </div>
         </div>
