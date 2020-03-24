@@ -24,6 +24,7 @@ header {
     .navigationContainer:not(.navigationModalOpen) {
       display: none;
     }
+
     .navigationContainer.navigationModalOpen {
       position: fixed;
       left: 0;
@@ -40,6 +41,13 @@ header {
 
           .secondaryNav {
             padding: 0;
+            margin-left: 20px;
+
+            li a:before {
+              font-family: "Font Awesome 5 Free";
+              content: "\f35a";
+              margin-right: 5px;
+            }
           }
           a {
             background-color: rgba(50, 50, 50, 0.6);
