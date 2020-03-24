@@ -4,6 +4,7 @@ import { GET } from "../../utils/http";
 //import Pagination from "./pokepagination";
 import styles from "./pokemons.module.scss";
 import { PokeData } from "../../interfaces";
+import Pagination from "./pokepagination";
 
 // url pq ele há de ter o pokemon.url, tal como tem o pokemon.name
 
@@ -55,43 +56,23 @@ const PokePage = () => {
       ) : (
         <div>
           <h1 className={styles.title}>Gotta catch them all!</h1>
-          <div className={styles.btnContainer}>
-            <button
-              className={styles.pokeBtn}
-              onClick={prev}
-              disabled={!prevUrl}
-            >
-              Previous
-            </button>
-            <button
-              className={styles.pokeBtn}
-              onClick={next}
-              disabled={!nextUrl}
-            >
-              Next
-            </button>
-          </div>
+          <Pagination
+            prev={prev}
+            next={next}
+            prevUrl={prevUrl}
+            nextUrl={nextUrl}
+          />
           <div className={styles.pokeData}>
             {pokemonData.map(pokemon => (
               <Pokemons pokemon={pokemon} key={pokemon.name} />
             ))}
           </div>
-          <div className={styles.btnContainer}>
-            <button
-              className={styles.pokeBtn}
-              onClick={prev}
-              disabled={!prevUrl}
-            >
-              Previous
-            </button>
-            <button
-              className={styles.pokeBtn}
-              onClick={next}
-              disabled={!nextUrl}
-            >
-              Next
-            </button>
-          </div>
+          <Pagination
+            prev={prev}
+            next={next}
+            prevUrl={prevUrl}
+            nextUrl={nextUrl}
+          />
         </div>
       )}
     </div>

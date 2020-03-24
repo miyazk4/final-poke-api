@@ -1,59 +1,105 @@
 header {
-  border: 1px solid red;
   background-color: rgb(244, 81, 83);
-
-  & .container {
+  max-width: 1245px;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 56px;
+    margin: 0 20px;
 
-    & .leftSide img {
-      max-width: 115px;
+    .leftSide {
+      .logo {
+        .logoImage {
+          max-width: 115px;
+        }
+      }
     }
+  }
 
-    & .navigationContainer {
-      & .rightSide .mainNav li {
-        display: inline-block;
-        background-color: rgb(244, 81, 83);
-
-        & a {
-          color: #fff;
-          text-decoration: none;
-          padding: 0 16px;
+  @media (max-width: 600px) {
+    .navigationContainer:not(.navigationModalOpen) {
+      display: none;
+    }
+    .navigationContainer.navigationModalOpen {
+      position: fixed;
+      left: 0;
+      top: 48px;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.5);
+      .mainNav {
+        margin-top: 15px;
+        li {
           display: block;
+          text-align: center;
+          margin: 8px;
 
-          &.activeLink {
-            background-color: rgb(202, 36, 45);
+          .secondaryNav {
+            padding: 0;
+          }
+          a {
+            background-color: rgba(50, 50, 50, 0.6);
+            display: block;
+            padding: 15px;
+            width: 50%;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 601px) {
+  header {
+    max-width: 100%;
+    .container {
+      .navigationContainer {
+        .mainNav li {
+          display: inline-block;
+          background-color: rgb(244, 81, 83);
+
+          a {
+            padding: 0 16px;
+            display: block;
+
+            &.activeLink {
+              background-color: rgb(202, 36, 45);
+            }
+
+            &:hover {
+              text-decoration: underline;
+              background-color: rgb(238, 62, 69);
+            }
+          }
+        }
+
+        .rightSide .mainNav .aboutNavigation {
+          position: relative;
+
+          .secondaryNav {
+            display: none;
+            position: absolute;
           }
 
           &:hover {
-            text-decoration: underline;
-            background-color: rgb(238, 62, 69);
-          }
-        }
-      }
-
-      & .rightSide .mainNav .aboutNavigation {
-        position: relative;
-
-        & .secondaryNav {
-          display: none;
-          position: absolute;
-        }
-
-        &:hover {
-          & .secondaryNav {
-            display: block;
-            background-color: red;
-          }
-
-          & li {
-            display: flex;
-            //white-space: nowrap;
+            .secondaryNav {
+              display: block;
+              background-color: red;
+            }
           }
         }
       }
     }
+  }
+}
+
+@media (min-width: 999px) {
+  a {
+    font-size: 20px;
   }
 }

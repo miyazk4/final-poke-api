@@ -1,4 +1,6 @@
 main {
+  max-width: 1245px;
+  background-color: rgb(249, 249, 249);
   a {
     text-decoration: none;
     color: #1c88cc;
@@ -12,34 +14,56 @@ main {
     font-weight: bold;
   }
 
-  background-color: rgb(249, 249, 249);
-  & .mainContainer {
-    padding: 35px 110px 32px 110px;
-    margin: 0 56px;
+  .mainContainer {
     background-color: #fff;
 
-    & .informationContainer {
-      & .subTitle {
+    .informationContainer {
+      .subTitle {
         margin: 20px 0 7px 0;
         font-weight: 400;
         font-size: 20px;
       }
 
-      & .informationBox {
+      .informationBox {
         padding: 10px;
         box-shadow: 3px 2px 5px #ccc;
         background-color: rgb(245, 245, 245);
         border: 2px solid #ddd;
-        & .information {
+        .information {
           margin: 14px 0;
           font-size: 15px;
         }
 
-        & .list {
+        .list {
           list-style-type: disc;
           padding-left: 40px;
         }
       }
+    }
+  }
+}
+
+@media (min-width: 0) and (max-width: 600px) {
+  .mainContainer {
+    padding: 15px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 999px) {
+  .mainContainer {
+    padding: 35px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  main {
+    max-width: 100%;
+
+    .mainContainer {
+      margin: 0 4%;
+      padding: 15px 35px;
     }
   }
 }

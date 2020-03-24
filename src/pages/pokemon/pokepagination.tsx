@@ -1,23 +1,22 @@
 import React from "react";
+import styles from "./pokemons.module.scss";
 
-interface PokePagination {
-  goToPreviousPage: (() => void) | null;
-  goToNextPage: (() => void) | null;
+interface PaginationProps {
+  prev: () => void;
+  next: () => void;
+  prevUrl?: string;
+  nextUrl?: string;
 }
 
-const Pagination = ({ goToPreviousPage, goToNextPage }: PokePagination) => {
+const Pagination = ({ prev, next, prevUrl, nextUrl }: PaginationProps) => {
   return (
-    <div>
-      {goToPreviousPage && (
-        <button type="button" onClick={goToPreviousPage}>
-          Previous
-        </button>
-      )}
-      {goToNextPage && (
-        <button type="button" onClick={goToNextPage}>
-          Next
-        </button>
-      )}
+    <div className={styles.btnContainer}>
+      <button className={styles.pokeBtn} onClick={prev} disabled={!prevUrl}>
+        Previous
+      </button>
+      <button className={styles.pokeBtn} onClick={next} disabled={!nextUrl}>
+        Next
+      </button>
     </div>
   );
 };

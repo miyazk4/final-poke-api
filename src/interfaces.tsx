@@ -13,6 +13,7 @@ export interface PokeData {
   id: number;
   forms: Forms[];
   species: Species;
+  pagination: Pagination;
 }
 interface Forms {
   name: string;
@@ -34,4 +35,9 @@ interface Types {
 interface Result {
   name: string;
   url: string;
+}
+
+interface Pagination {
+  next: string;
+  previous: null;
 }
