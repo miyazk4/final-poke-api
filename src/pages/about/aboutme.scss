@@ -7,15 +7,15 @@ main {
   max-width: 1245px;
   background-color: rgb(249, 249, 249);
 
-  & .aboutMeWrapper {
+  .aboutMeWrapper {
     padding: 35px 110px 32px 110px;
     margin: 0 56px;
     background-color: #fff;
 
-    & .aboutMeFlex {
+    .aboutMeFlex {
       display: flex;
 
-      & .leftColumn {
+      .leftColumn {
         box-shadow: $boxShadow;
         background-color: rgb(245, 245, 245);
         border: $border;
@@ -23,16 +23,16 @@ main {
         padding: 15px;
         margin-right: 20px;
 
-        & .aboutMeImgContainer {
+        .aboutMeImgContainer {
           background-color: $contBackground;
           border-radius: $borderRadius;
-          & .aboutMeImg {
+          .aboutMeImg {
             max-width: 65%;
             margin: 0 auto;
           }
         }
 
-        & .aboutMeSmDetails {
+        .aboutMeSmDetails {
           text-align: center;
           font-family: Verdana;
           font-size: 15px;
@@ -40,27 +40,27 @@ main {
           background-color: $contBackground;
           border-radius: $borderRadius;
 
-          & .far,
-          & .fas {
+          .far,
+          .fas {
             margin: 5px 10px 0 0;
           }
         }
       }
 
-      & .rightColumn {
+      .rightColumn {
         padding: 25px;
         box-shadow: $boxShadow;
         background-color: rgb(245, 245, 245);
         border: $border;
         border-radius: $borderRadius;
 
-        & h1 {
+        h1 {
           background-color: $contBackground;
           border-radius: $borderRadius;
           margin-bottom: 15px;
         }
 
-        & p {
+        p {
           font-family: Verdana;
           background-color: $contBackground;
           border-radius: $borderRadius;
@@ -73,16 +73,16 @@ main {
 
 @media (min-width: 0) and (max-width: 600px) {
   main {
-    & .aboutMeWrapper {
+    .aboutMeWrapper {
       padding: 10px 15px;
       margin: 10px auto 0 auto;
 
-      & .aboutMeFlex {
+      .aboutMeFlex {
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        & .leftColumn {
+        .leftColumn {
           max-width: 350px;
           margin-bottom: 25px;
         }
@@ -93,19 +93,19 @@ main {
 
 @media (min-width: 601px) and (max-width: 998px) {
   main {
-    & .aboutMeWrapper {
+    .aboutMeWrapper {
       margin: 25px auto 0 auto;
-      & .aboutMeFlex {
+      .aboutMeFlex {
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        & .leftColumn {
+        .leftColumn {
           max-width: 450px;
           margin-bottom: 40px;
         }
 
-        & .rightColumn {
+        .rightColumn {
           width: 100%;
         }
       }
@@ -117,14 +117,14 @@ main {
   main {
     max-width: 100%;
 
-    & .aboutMeWrapper {
-      & .aboutMeFlex {
+    .aboutMeWrapper {
+      .aboutMeFlex {
         flex-direction: row;
         justify-content: center;
         align-items: center;
         margin-top: 45px;
 
-        & .leftColumn {
+        .leftColumn {
           flex: 0 0 33%;
         }
       }

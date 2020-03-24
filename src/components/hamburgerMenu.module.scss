@@ -1,14 +1,10 @@
 @media (max-width: 600px) {
-  header {
-    position: fixed;
-    width: 100%;
-  }
   .hamburgerMenu {
     cursor: pointer;
     display: flex;
     flex-direction: column;
 
-    & .bar1,
+    .bar1,
     .bar2,
     .bar3 {
       background-color: #000;
