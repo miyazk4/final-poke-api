@@ -3,6 +3,25 @@ header {
   background-color: rgb(244, 81, 83);
   max-width: 1245px;
 
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+
+    .leftSide {
+      .logo {
+        .logoImage {
+          max-width: 115px;
+        }
+      }
+    }
+  }
+
   @media (max-width: 600px) {
     .navigationContainer:not(.navigationModalOpen) {
       display: none;
@@ -15,71 +34,24 @@ header {
       bottom: 0;
       background-color: rgba(255, 255, 255, 0.5);
       .mainNav {
+        margin-top: 15px;
         li {
           display: block;
-        }
-      }
-    }
-  }
+          text-align: center;
+          margin: 8px;
 
-  & .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 56px;
-
-    & .leftSide img {
-      max-width: 115px;
-    }
-
-    & .navigationContainer {
-      .mainNav li {
-        display: inline-block;
-        background-color: rgb(244, 81, 83);
-
-        & a {
-          color: #fff;
-          text-decoration: none;
-          padding: 0 16px;
-          display: block;
-
-          &.activeLink {
-            background-color: rgb(202, 36, 45);
-          }
-
-          &:hover {
-            text-decoration: underline;
-            background-color: rgb(238, 62, 69);
-          }
-        }
-      }
-
-      & .rightSide .mainNav .aboutNavigation {
-        position: relative;
-
-        & .secondaryNav {
-          display: none;
-          position: absolute;
-        }
-
-        &:hover {
           .secondaryNav {
-            display: block;
-            background-color: red;
+            padding: 0;
           }
-
-          li {
-            display: flex;
-            //white-space: nowrap;
+          a {
+            background-color: rgba(120, 120, 120, 0.5);
+            display: block;
+            padding: 15px;
+            width: 50%;
+            margin: 0 auto;
           }
         }
       }
     }
-  }
-}
-
-@media (min-width: 999px) {
-  header {
-    max-width: 100%;
   }
 }
