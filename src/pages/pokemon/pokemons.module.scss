@@ -142,8 +142,12 @@ $insideCardInfoBck: rgba(150, 150, 220, 0.2);
   .pageContainer {
     width: 100%;
     .pokeData {
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      grid-template-columns: repeat(3, 1fr);
       .pokeContainer {
-        width: 320px;
+        max-width: 500px;
       }
     }
   }
